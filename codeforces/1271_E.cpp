@@ -9,7 +9,7 @@ const int N = 1e5+10;
 struct path{
 	ll p,v;
 }bdr,bdr_u,e,o;
-ll k;
+ll k,n;
 bool judge(path u){
 	if(u.p>=k){
 		return true;
@@ -17,8 +17,6 @@ bool judge(path u){
 	else return false;
 }
 ll solve(){
-	ll n;
-	scanf("%lld%lld",&n,&k);
 	bdr.v=n;
 	bdr.p=1;
 	if(judge(bdr))return bdr.v;
@@ -89,5 +87,12 @@ ll solve(){
 	}
 }
 int main(){
-	printf("%lld\n",solve() );
+	freopen("test.in", "r", stdin);
+    freopen("test.out", "w", stdout);
+	int t;
+	scanf("%d",&t);
+	for(int i=0;i<t;i++){
+		scanf("%lld %lld",&n,&k);
+		printf("%lld\n",solve() );
+	}
 }
